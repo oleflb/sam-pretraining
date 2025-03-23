@@ -20,9 +20,7 @@ def main():
         student=model,
         train_dataset=train_set,
         validation_dataset=validation_set,
-        hyperparameters=SamPretrainerHyperparameters(
-            epochs=500
-        ),
+        hyperparameters=SamPretrainerHyperparameters(epochs=500),
     )
     pretrainer.train()
 
