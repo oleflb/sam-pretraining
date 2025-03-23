@@ -1,0 +1,33 @@
+[project]
+name = "sam_pretraining"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "ipywidgets>=8.1.5",
+    "jupyter>=1.1.1",
+    "pillow>=11.1.0",
+    "segment-anything",
+    "timm>=1.0.15",
+    "torch>=2.6.0",
+    "torchmetrics>=1.7.0",
+    "torchvision>=0.21.0",
+    "transformers>=4.50.0",
+    "wandb>=0.19.8",
+]
+
+[tool.uv.sources]
+segment-anything = { git = "https://github.com/facebookresearch/segment-anything.git" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.2",
+]
